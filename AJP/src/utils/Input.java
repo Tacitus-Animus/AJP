@@ -36,7 +36,6 @@ public class Input
 	 * <h2>getStringln</h2>
 	 * This method is used to get a line of String that isn't empty else prints out
 	 * input error. 
-	 * <p> Note: System.err.println() just prints out text in red
 	 * @param prompt This is what will be displayed to the user prior to input
 	 * <p> Note: prompt is printed out by System.out.print().
 	 * @return String that isn't empty and doesn't contain whitespace on the front and back ends of it.
@@ -49,7 +48,7 @@ public class Input
 		{
 			System.out.print(prompt);
 			storedString = input.nextLine().trim();
-			if(storedString.isEmpty()) System.err.println("Invalid Input: You didn't enter anything.");
+			if(storedString.isEmpty()) System.out.println("Invalid Input: You didn't enter anything.");
 			else break;
 		}
 		return storedString;
@@ -69,7 +68,7 @@ public class Input
 		while(true) 
 		{	
 			storedString = getStringln(prompt);
-			if(storedString.contains(" ")) System.err.println("Invalid Input: You entered too many variables.");
+			if(storedString.contains(" ")) System.out.println("Invalid Input: You entered too many variables.");
 			else break; 
 		}
 		return storedString;
@@ -90,7 +89,7 @@ public class Input
 		while(true) 
 		{	
 			storedString = getString(prompt);
-			if(storedString.length() > 1) System.err.println("Invalid Input: Too long.");
+			if(storedString.length() > 1) System.out.println("Invalid Input: Too long.");
 			else break;
 		}
 		return storedString.charAt(0);
@@ -110,7 +109,7 @@ public class Input
 		while(true) 
 		{
 			storedChar = getChar(prompt);
-			if(!Character.isLetter(storedChar)) System.err.println("Invalid Input: Not a Letter.");
+			if(!Character.isLetter(storedChar)) System.out.println("Invalid Input: Not a Letter.");
 			else break;
 		}
 		return storedChar;
@@ -130,7 +129,7 @@ public class Input
 		while(true) 
 		{
 			storedChar = getChar(prompt);
-			if(!Character.isDigit(storedChar)) System.err.println("Invalid Input: Not a Digit.");
+			if(!Character.isDigit(storedChar)) System.out.println("Invalid Input: Not a Digit.");
 			else break;
 		}
 		return storedChar;
@@ -154,7 +153,7 @@ public class Input
 			try{ 
 				return new BigDecimal(getString(prompt)); 
 			}catch(NumberFormatException E){ 
-				System.err.println("Invalid Input: Not a number."); 
+				System.out.println("Invalid Input: Not a number."); 
 			}
 		}	
 	}
