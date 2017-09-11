@@ -2,7 +2,7 @@ package utils;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
-//Testing
+//Testing is good!
 public class Input 
 {
 	private static Scanner input = new Scanner(System.in);
