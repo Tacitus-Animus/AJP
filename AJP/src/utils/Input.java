@@ -41,17 +41,14 @@ public class Input
 	 * @return String that isn't empty and doesn't contain whitespace on the front and back ends of it.
 	 */
 	public static String getStringln(String prompt) 
-	{
-		String storedString;
-		
+	{		
 		while(true) 
 		{
 			System.out.print(prompt);
-			storedString = input.nextLine().trim();
+			String storedString = input.nextLine().trim();
 			if(storedString.isEmpty()) System.out.println("Invalid Input: You didn't enter anything.");
-			else break;
+			else return storedString;;
 		}
-		return storedString;
 	}
 
 	/**
@@ -62,16 +59,13 @@ public class Input
 	 * @return String that doesn't contain whitespace between characters;
 	 */
 	public static String getString(String prompt) 
-	{
-		String storedString;
-		
+	{		
 		while(true) 
 		{	
-			storedString = getStringln(prompt);
+			String storedString = getStringln(prompt);
 			if(storedString.contains(" ")) System.out.println("Invalid Input: You entered too many variables.");
-			else break; 
+			else return storedString;; 
 		}
-		return storedString;
 	}
 	
 	/**
@@ -83,16 +77,13 @@ public class Input
 	 * @see Character
 	 */
 	public static char getChar(String prompt) 
-	{
-		String storedString;
-		
+	{		
 		while(true) 
 		{	
-			storedString = getString(prompt);
+			String storedString = getString(prompt);
 			if(storedString.length() > 1) System.out.println("Invalid Input: Too long.");
-			else break;
+			else return storedString.charAt(0);;
 		}
-		return storedString.charAt(0);
 	}
 	
 	/**
@@ -103,16 +94,13 @@ public class Input
 	 * @see Character
 	 */
 	public static char getLetter(String prompt) 
-	{
-		char storedChar;
-		
+	{		
 		while(true) 
 		{
-			storedChar = getChar(prompt);
+			char storedChar = getChar(prompt);
 			if(!Character.isLetter(storedChar)) System.out.println("Invalid Input: Not a Letter.");
-			else break;
+			else return storedChar;
 		}
-		return storedChar;
 	}
 	
 	/**
@@ -123,16 +111,33 @@ public class Input
 	 * @see Character
 	 */
 	public static char getDigit(String prompt) 
-	{
-		char storedChar;
-		
+	{		
 		while(true) 
 		{
-			storedChar = getChar(prompt);
+			char storedChar = getChar(prompt);
 			if(!Character.isDigit(storedChar)) System.out.println("Invalid Input: Not a Digit.");
-			else break;
+			else return storedChar;;
 		}
-		return storedChar;
+	}
+	
+	public static char getLetterRange(String prompt, char min, char max) 
+	{		
+		while(true) 
+		{
+			char storedChar = getLetter(prompt);
+			if(storedChar < min || storedChar > max) System.out.println("Invalid Input: Out of Range.");
+			else return storedChar;
+		}
+	}
+
+	public static char getDigitRange(String prompt, char min, char max) 
+	{
+		while(true) 
+		{
+			char storedChar = getChar(prompt);
+			if(storedChar < min || storedChar > max) System.out.println("Invalid Input: Not a Digit.");
+			else return storedChar;;
+		}
 	}
 	
 	/**
@@ -190,4 +195,35 @@ public class Input
 	{
 		return getNumber(prompt).intValue(); 	
 	}
+	
+	public static int getIntRange(String prompt, int min, int max)
+	{				
+		while(true)
+		{
+			int storedInt = getInt(prompt);
+			if(storedInt < min || storedInt > max) System.out.println("Invalid Input: Out of Range.");
+			else return storedInt;
+		}
+	}
+
+	public static double getDoubleRange(String prompt, double min, double max) 
+	{				
+		while(true)
+		{
+			double storedDouble = getDouble(prompt);
+			if(storedDouble < min || storedDouble > max) System.out.println("Invalid Input: Out of Range.");
+			else return storedDouble;
+		}
+	}
+	
+	public static float getFloatRange(String prompt, float min, float max) 
+	{				
+		while(true)
+		{
+			float storedFloat = getFloat(prompt);
+			if(storedFloat < min || storedFloat > max) System.out.println("Invalid Input: Out of Range.");
+			else return storedFloat;
+		}
+	}
+	
 }
