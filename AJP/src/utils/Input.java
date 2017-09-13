@@ -135,7 +135,7 @@ public class Input
 		while(true) 
 		{
 			char storedChar = getChar(prompt);
-			if(storedChar < min || storedChar > max) System.out.println("Invalid Input: Not a Digit.");
+			if(storedChar < min || storedChar > max) System.out.println("Invalid Input: Out of Range.");
 			else return storedChar;;
 		}
 	}
