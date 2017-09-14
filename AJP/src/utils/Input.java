@@ -2,7 +2,6 @@ package utils;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
-
 /**
 * <h1>Input Class</h1>
 * The Input program implements a Scanner Object to
@@ -21,17 +20,15 @@ import java.util.Scanner;
 * @see Scanner
 * 
 * @author  Alexander J Paul
-* @version 2.0
+* @version 2.1
 * @since   2017-SEP-11 
 */
-
 public class Input 
 {
 	/**
 	 * Scanner Object used to get basic input from user.
 	 */
 	private static Scanner input = new Scanner(System.in);
-
 	/**
 	 * <h2>getStringln</h2>
 	 * This method is used to get a line of String that isn't empty else prints out
@@ -50,7 +47,6 @@ public class Input
 			else return storedString;;
 		}
 	}
-
 	/**
 	 * <h2>getString</h2>
 	 * This method makes use of method getStringln() to return a line of String from the user.
@@ -67,7 +63,6 @@ public class Input
 			else return storedString;; 
 		}
 	}
-	
 	/**
 	 * <h2>getChar</h2>
 	 * This method makes use of Method getString() to return a String from the user.
@@ -85,7 +80,6 @@ public class Input
 			else return storedString.charAt(0);;
 		}
 	}
-	
 	/**
 	 * <h2>getLetter</h2>
 	 * This method makes use of the method getChar() to return a char from user.
@@ -102,7 +96,6 @@ public class Input
 			else return storedChar;
 		}
 	}
-	
 	/**
 	 * <h2>getDigit</h2>
 	 * This method makes use of method getChar() to return char from user.
@@ -119,7 +112,14 @@ public class Input
 			else return storedChar;;
 		}
 	}
-	
+	/**
+	 * <h2>getLetterRange</h2>
+	 * This method makes use of method getChar() to return char from user.
+	 * Prints input error if char isn't a letter in range of specified values.	 
+	 * @param min value user can input.
+	 * @param max value user can input.
+	 * @return char value which is a letter within min and max values.
+	 */
 	public static char getLetterRange(String prompt, char min, char max) 
 	{		
 		while(true) 
@@ -129,17 +129,23 @@ public class Input
 			else return storedChar;
 		}
 	}
-
+	/**
+	 * <h2>getDigitRange</h2>
+	 * This method makes use of method getDigit() to return char from user.
+	 * Prints input error if char isn't a a digit in range of specified values.	 
+	 * @param min value user can input.
+	 * @param max value user can input.
+	 * @return char value which is a digit within min and max values.
+	 */
 	public static char getDigitRange(String prompt, char min, char max) 
 	{
 		while(true) 
 		{
-			char storedChar = getChar(prompt);
+			char storedChar = getDigit(prompt);
 			if(storedChar < min || storedChar > max) System.out.println("Invalid Input: Out of Range.");
 			else return storedChar;;
 		}
 	}
-	
 	/**
 	 * <h2>getNumber</h2>
 	 * Makes use of method getString() to return String from user.
@@ -162,7 +168,6 @@ public class Input
 			}
 		}	
 	}
-	
 	/** 
 	 * <h2>getDouble</h2>
 	 * Makes use of method getNumber() to return Number from user.
@@ -173,7 +178,6 @@ public class Input
 	{
 		return getNumber(prompt).doubleValue();
 	}
-	
 	/** 
 	 * <h2>getFloat</h2>
 	 * Makes use of method getNumber() to return Number from user.
@@ -184,7 +188,6 @@ public class Input
 	{
 		return getNumber(prompt).floatValue();
 	}
-	
 	/** 
 	 * <h2>getInt</h2>
 	 * Makes use of method getNumber() to return Number from user.
@@ -195,7 +198,14 @@ public class Input
 	{
 		return getNumber(prompt).intValue(); 	
 	}
-	
+	/**
+	 * <h2>getIntRange</h2>
+	 * This method makes use of method getInt() to return char from user.
+	 * Prints input error if int isn't in range of specified values.	 
+	 * @param min value user can input.
+	 * @param max value user can input.
+	 * @return int value which is within min and max values.
+	 */
 	public static int getIntRange(String prompt, int min, int max)
 	{				
 		while(true)
@@ -205,7 +215,14 @@ public class Input
 			else return storedInt;
 		}
 	}
-
+	/**
+	 * <h2>getDoubleRange</h2>
+	 * This method makes use of method getDouble() to return double from user.
+	 * Prints input error if double isn't in range of specified values.	 
+	 * @param min value user can input.
+	 * @param max value user can input.
+	 * @return double value which is within min and max values.
+	 */
 	public static double getDoubleRange(String prompt, double min, double max) 
 	{				
 		while(true)
@@ -215,7 +232,14 @@ public class Input
 			else return storedDouble;
 		}
 	}
-	
+	/**
+	 * <h2>getFloatRange</h2>
+	 * This method makes use of method getFloat() to return float from user.
+	 * Prints input error if float isn't in range of specified values.	 
+	 * @param min value user can input.
+	 * @param max value user can input.
+	 * @return float value which is within min and max values.
+	 */
 	public static float getFloatRange(String prompt, float min, float max) 
 	{				
 		while(true)
@@ -225,5 +249,4 @@ public class Input
 			else return storedFloat;
 		}
 	}
-	
 }
