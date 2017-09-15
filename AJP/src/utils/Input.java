@@ -43,7 +43,7 @@ public class Input
 		{
 			System.out.print(prompt);
 			String storedString = input.nextLine().trim();
-			if(storedString.isEmpty()) System.out.println("Invalid Input: You didn't enter anything.");
+			if(storedString.isEmpty()) System.out.println("Invalid Input: Nothing entered.");
 			else return storedString;;
 		}
 	}
@@ -59,7 +59,7 @@ public class Input
 		while(true) 
 		{	
 			String storedString = getStringln(prompt);
-			if(storedString.contains(" ")) System.out.println("Invalid Input: You entered too many variables.");
+			if(storedString.contains(" ")) System.out.println("Invalid Input: Too many variables entered.");
 			else return storedString;; 
 		}
 	}
@@ -76,7 +76,7 @@ public class Input
 		while(true) 
 		{	
 			String storedString = getString(prompt);
-			if(storedString.length() > 1) System.out.println("Invalid Input: Too long.");
+			if(storedString.length() > 1) System.out.println("Invalid Input: Too Long.");
 			else return storedString.charAt(0);;
 		}
 	}
@@ -146,57 +146,54 @@ public class Input
 			else return storedChar;;
 		}
 	}
-	/**
-	 * <h2>getNumber</h2>
-	 * Makes use of method getString() to return String from user.
-	 * Prints input error if String can't be parsed into BigDecimal.
-	 * <p> Note: BigDecimal seems to have to most precision getting a number value from the user.
-	 * This makes it possible to get any other number type without losing precision. 
-	 * @return Number that is a BigDecimal.
-	 * @see Number
-	 * @see BigDecimal
-	 * @see NumberFormatException
+	/** 
+	 * <h2>getDouble</h2>
+	 * This Method prints out input error if it can't parse double from getString().
+	 * @return double value.
 	 */
-	public static Number getNumber(String prompt)
+	public static double getDouble(String prompt) 
 	{
 		while(true) 
 		{
 			try{ 
-				return new BigDecimal(getString(prompt)); 
+				return Double.parseDouble(getString(prompt)); 
 			}catch(NumberFormatException E){ 
-				System.out.println("Invalid Input: Not a number."); 
+				System.out.println("Invalid Input: Not a Number."); 
 			}
-		}	
-	}
-	/** 
-	 * <h2>getDouble</h2>
-	 * Makes use of method getNumber() to return Number from user.
-	 * @return double value of Number.
-	 * @see Number
-	 */
-	public static double getDouble(String prompt) 
-	{
-		return getNumber(prompt).doubleValue();
+		}
 	}
 	/** 
 	 * <h2>getFloat</h2>
-	 * Makes use of method getNumber() to return Number from user.
-	 * @return float value of Number.
-	 * @see Number
+	 * This Method prints out input error if it can't parse float from getString().
+	 * @return float value.
 	 */
 	public static float getFloat(String prompt) 
 	{
-		return getNumber(prompt).floatValue();
+		while(true) 
+		{
+			try{ 
+				return Float.parseFloat(getString(prompt)); 
+			}catch(NumberFormatException E){ 
+				System.out.println("Invalid Input: Not a Number."); 
+			}
+		}
 	}
 	/** 
 	 * <h2>getInt</h2>
-	 * Makes use of method getNumber() to return Number from user.
-	 * @return int value of Number.
+	 * This Method prints out input error if it can't parse int from getString().
+	 * @return int value.
 	 * @see Number
 	 */
 	public static int getInt(String prompt) 
 	{
-		return getNumber(prompt).intValue(); 	
+		while(true) 
+		{
+			try{ 
+				return Integer.parseInt(getString(prompt)); 
+			}catch(NumberFormatException E){ 
+				System.out.println("Invalid Input: Not a Non-Decimal/Number."); 
+			}
+		}
 	}
 	/**
 	 * <h2>getIntRange</h2>
