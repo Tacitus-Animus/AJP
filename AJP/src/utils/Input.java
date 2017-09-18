@@ -1,6 +1,5 @@
 package utils;
 
-import java.math.BigDecimal;
 import java.util.Scanner;
 /**
 * <h1>Input Class</h1>
