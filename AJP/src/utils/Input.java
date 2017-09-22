@@ -131,7 +131,7 @@ public class Input
 	/**
 	 * <h2>getDigitRange</h2>
 	 * This method makes use of method getDigit() to return char from user.
-	 * Prints input error if char isn't a a digit in range of specified values.	 
+	 * Prints input error if char isn't a digit in range of specified values.	 
 	 * @param min value user can input.
 	 * @param max value user can input.
 	 * @return char value which is a digit within min and max values.
