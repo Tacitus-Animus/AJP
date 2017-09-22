@@ -76,7 +76,7 @@ public class Input
 		{	
 			String storedString = getString(prompt);
 			if(storedString.length() > 1) System.out.println("Invalid Input: Too Long.");
-			else return storedString.charAt(0);;
+			else return storedString.charAt(0);
 		}
 	}
 	/**
