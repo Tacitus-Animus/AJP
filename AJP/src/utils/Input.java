@@ -179,19 +179,19 @@ public class Input
 	}
 	/** 
 	 * <h2>getInt</h2>
-	 * This Method prints out input error if it can't parse int from getString().
+	 * This Method prints out input error if getFloat() method returns a non Whole Number/Integer.
+	 * <p> It checks this by checking it's floating point value by it's casted int value. Quick and dirty >;)
+	 * <p> Thank you StackOverflow... but their are limitations. 
 	 * @return int value.
-	 * @see Number
 	 */
 	public static int getInt(String prompt) 
 	{
 		while(true) 
 		{
-			try{ 
-				return Integer.parseInt(getString(prompt)); 
-			}catch(NumberFormatException E){ 
-				System.out.println("Invalid Input: Not a Non-Decimal/Number."); 
-			}
+			float storedFloat = getFloat(prompt);
+			if(storedFloat % 1 != 0) System.out.println("Invalid Input: Not a Whole Number."); 
+			else return (int)storedFloat;
+			
 		}
 	}
 	/**
