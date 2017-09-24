@@ -43,7 +43,7 @@ public class Input
 			System.out.print(prompt);
 			String storedString = input.nextLine().trim();
 			if(storedString.isEmpty()) System.out.println("Invalid Input: Nothing entered.");
-			else return storedString;;
+			else return storedString;
 		}
 	}
 	/**
@@ -59,7 +59,7 @@ public class Input
 		{	
 			String storedString = getStringln(prompt);
 			if(storedString.contains(" ")) System.out.println("Invalid Input: Too many variables entered.");
-			else return storedString;; 
+			else return storedString;
 		}
 	}
 	/**
@@ -191,7 +191,6 @@ public class Input
 			float storedFloat = getFloat(prompt);
 			if(storedFloat % 1 != 0) System.out.println("Invalid Input: Not a Whole Number."); 
 			else return (int)storedFloat;
-			
 		}
 	}
 	/**
