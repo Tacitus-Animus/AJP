@@ -1,6 +1,6 @@
 package utils;
 
-public class Print 
+public class Output 
 {
 	private static int milliSeconds = 50;
 	
@@ -17,7 +17,7 @@ public class Print
 		}
 		System.out.println();
 	}
-	public static void out(String... output)
+	public static void type(String... output)
 	{
 		for(String index : output)
 		{
@@ -26,8 +26,8 @@ public class Print
 	}
 	public static void setDelay(int milliSeconds)
 	{
-		if(milliSeconds < 0) Print.milliSeconds = 0;
-		else if(milliSeconds > 1000) Print.milliSeconds = 1000;
-		else Print.milliSeconds = milliSeconds;
+		if(milliSeconds < 0) Output.milliSeconds = 0;
+		else if(milliSeconds > 1000) Output.milliSeconds = 1000;
+		else Output.milliSeconds = milliSeconds;
 	}
 }
