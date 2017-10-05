@@ -3,7 +3,10 @@ package utils;
 public class Output 
 {
 	private static int milliSeconds = 50;
-	
+	/**
+	 * This method prints out String in typewriter like fashion.
+	 * @param output - String to be printed out.
+	 */
 	public static void type(String output)
 	{
 		for(char index : output.toCharArray())
@@ -17,6 +20,10 @@ public class Output
 		}
 		System.out.println();
 	}
+	/**
+	 * This method prints out Strings in typewriter like fashion.
+	 * @param output - Strings to be printed out.
+	 */
 	public static void type(String... output)
 	{
 		for(String index : output)
@@ -24,6 +31,10 @@ public class Output
 			type(index);
 		}
 	}
+	/**
+	 * 
+	 * @param milliSeconds - The delay between printing out Strings when type() method is invoked.
+	 */
 	public static void setDelay(int milliSeconds)
 	{
 		if(milliSeconds < 0) Output.milliSeconds = 0;
