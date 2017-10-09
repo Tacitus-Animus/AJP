@@ -2,7 +2,7 @@ package utils;
 
 public class Output 
 {
-	private static int milliSeconds = 50;
+	private static int milliSeconds = 25;
 	/**
 	 * This method prints out String in typewriter like fashion.
 	 * @param output - String to be printed out.
