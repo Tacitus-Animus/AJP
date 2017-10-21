@@ -1,5 +1,10 @@
-package utils;
+package utils.io;
 
+/**
+* @author  Alexander J Paul
+* @version 1.1
+* @since   2017-SEP-11 
+ */
 public class Output 
 {
 	private static int milliSeconds = 25;
