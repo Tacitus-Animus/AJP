@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
+/**
+ * @author Alex Paul
+ *
+ * @param <T>
+ */
 public class BinarySearch<T> implements Search<T> {
 
 	@Override
@@ -16,11 +21,12 @@ public class BinarySearch<T> implements Search<T> {
 	{ 
 		int mid = front + ((end - front) / 2);
 				
+		@SuppressWarnings("boxing")
 		int result = searchStrategy.apply(searchValue, list.get(mid));
 						
 		if(result == 0) 
 		{
-			System.out.println("Found.");
+			System.out.println("Found."); //$NON-NLS-1$
 			return Optional.ofNullable(list.get(mid));
 		}
 		
@@ -28,7 +34,7 @@ public class BinarySearch<T> implements Search<T> {
 		
 		if(result > 0 && end > mid) return binarySearch(list, mid + 1, end, searchStrategy, searchValue);
 		
-		System.out.println("Not found.");
+		System.out.println("Not found."); //$NON-NLS-1$
 		return Optional.empty();
 	}
 	

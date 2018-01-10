@@ -31,7 +31,7 @@ public class Quicksort<T> extends Sort<T>
 		{
 			while(true)
 			{
-				//see(monsters, pivot_marker, left_marker, right_marker, monster -> String.format("%5d", monster.getAttack()));
+				//see(list, pivot_marker, left_marker, right_marker, monster -> String.format("%5d", monster.getAttack()));
 				if(left_marker == pivot_marker) break Outer;
 				if(compareStrategy.compare(list.get(left_marker), list.get(pivot_marker)) >= 0) break;
 				left_marker++;

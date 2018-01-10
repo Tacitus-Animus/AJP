@@ -40,7 +40,7 @@ public class Output
 	 * 
 	 * @param milliSeconds - The delay between printing out Strings when type() method is invoked.
 	 */
-	public static void setDelay(int milliSeconds)
+	public static void setDelay(@SuppressWarnings("hiding") int milliSeconds)
 	{
 		if(milliSeconds < 0) Output.milliSeconds = 0;
 		else if(milliSeconds > 1000) Output.milliSeconds = 1000;
