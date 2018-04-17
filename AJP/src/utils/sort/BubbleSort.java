@@ -1,7 +1,7 @@
 package utils.sort;
 
-import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * This Sort class sorts by the means of the bubble sort algorithm used for sorting a list of type T
@@ -14,7 +14,7 @@ import java.util.Comparator;
 public class BubbleSort<T> extends Sort<T>
 {
 	@Override
-	public void sort(ArrayList<T> list, Comparator<T> compareStrategy)
+	public void sort(List<T> list, Comparator<T> compareStrategy)
 	{
 		for(int end = list.size() - 1; end > 0; end--)
 		{

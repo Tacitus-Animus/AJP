@@ -1,7 +1,7 @@
 package utils.sort;
 
-import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * This Sort class sorts uses the quicksort algorithm to sort a list of type T
@@ -14,11 +14,12 @@ import java.util.Comparator;
 public class Quicksort<T> extends Sort<T> 
 {
 	@Override
-	public void sort(ArrayList<T> list, Comparator<T> compareStrategy) {
+	public void sort(List<T> list, Comparator<T> compareStrategy) {
 		quickSort(list, 0, list.size() - 1, compareStrategy);
 	}
 
-	private void quickSort(ArrayList<T> list, int front, int end, Comparator<T> compareStrategy) 
+	//helper method
+	private void quickSort(List<T> list, int front, int end, Comparator<T> compareStrategy) 
 	{	
 		int pivot_marker = end;
 		
@@ -52,7 +53,7 @@ public class Quicksort<T> extends Sort<T>
 		swap(list, left_marker, pivot_marker);
 		
 		if(left_marker - front > 1) quickSort(list, front , left_marker - 1, compareStrategy); 	
-		if(end - left_marker > 1) quickSort(list, left_marker + 1, end, compareStrategy); 
+		if(end - left_marker > 1) quickSort(list, left_marker + 1, end, compareStrategy);
 	}
 	
 }
