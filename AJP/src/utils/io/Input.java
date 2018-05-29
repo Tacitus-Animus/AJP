@@ -1,6 +1,8 @@
 package utils.io;
 
+import java.util.List;
 import java.util.Scanner;
+
 /**
 * <h1>Input Class</h1>
 * The Input program implements a Scanner Object to
@@ -243,6 +245,16 @@ public class Input
 			if(storedFloat < min || storedFloat > max) System.out.println("Invalid Input: Out of Range.");
 			else return storedFloat;
 		}
+	}
+	public static <T> T getListOption(List<T> pool_of_things) {
+		
+		for(int i = 1;  i <= pool_of_things.size(); i++) {
+			System.out.println(i + ". " + pool_of_things.get(i - 1));
+		}
+		
+		int option = Input.getIntRange("Choose Probability Object 1: ", 1, pool_of_things.size()) - 1;
+		
+		return pool_of_things.remove(option);
 	}
 	
 }
