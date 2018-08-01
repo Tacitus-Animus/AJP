@@ -2,7 +2,7 @@ package statistics;
 
 public class BayesRule {
 	
-	public static final char NEGATE = 'Â¬';
+	public static final char NEGATE = '¬';
 	
 	private PosteriorState positive = new PosteriorState("Positive", "C", "Pos");
 	
