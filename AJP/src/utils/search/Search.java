@@ -11,17 +11,18 @@ import java.util.function.BiFunction;
  * @since 10-OCT-2017
  * @version 1.3
  * @param <T> - The type specific to the this Functional Interface.
+ * @param <R>
  */
 @FunctionalInterface
-public interface Search<T> {
+public interface Search<T,R> {
 
 	/**
 	 * 
 	 * @param list - The list to be searched
-	 * @param searchStrategy - The BiFunction used to compare search value to specific attribute to type T.
+	 * @param searchStrategy - The BiFunction used to compare R to T which will output an Integer.
 	 * @param searchValue - The value used in searching for matching type T.
 	 * @return Optional of type T - If searchValue matches a specific attribute specified by searchStrategy returns T or returns empty.
 	 */
-	public Optional<T> search(ArrayList<T> list, BiFunction<String, T, Integer> searchStrategy, String searchValue);
+	public Optional<T> search(ArrayList<T> list, BiFunction<R, T, Integer> searchStrategy, R searchValue);
 	
 }

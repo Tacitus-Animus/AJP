@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
-public class LinearSearch<T> implements Search<T> 
+public class LinearSearch<T, R> implements Search<T,R> 
 {
 	@Override
-	public Optional<T> search(ArrayList<T> list, BiFunction<String, T, Integer> searchStrategy, String searchValue)
+	public Optional<T> search(ArrayList<T> list, BiFunction<R, T, Integer> searchStrategy, R searchValue)
 	{
 		for(T element : list)
 		{

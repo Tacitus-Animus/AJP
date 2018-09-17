@@ -1,5 +1,8 @@
 package utils.io;
 
+import java.time.LocalTime;
+import java.util.concurrent.TimeUnit;
+
 /**
 * @author  Alexander J Paul
 * @version 1.1
@@ -7,7 +10,7 @@ package utils.io;
  */
 public class Output 
 {
-	private static int milliSeconds = 25;
+	private static int milliSeconds = 250;
 	/**
 	 * This method prints out String in typewriter like fashion.
 	 * @param output - String to be printed out.
@@ -45,5 +48,18 @@ public class Output
 		if(milliSeconds < 0) Output.milliSeconds = 0;
 		else if(milliSeconds > 1000) Output.milliSeconds = 1000;
 		else Output.milliSeconds = milliSeconds;
+	}
+	
+	public static void testSpeed(String taskName, Runnable task) {
+		System.out.println("Start " + taskName);
+		long start = System.currentTimeMillis();
+		
+		task.run();
+		
+		long duration = System.currentTimeMillis() - start;
+		System.out.printf("End %s\n"
+						+ "Time: %d.%d seconds\n", taskName,TimeUnit.MILLISECONDS.toSeconds(duration), 
+															  TimeUnit.MILLISECONDS.toMillis(duration));
+		
 	}
 }

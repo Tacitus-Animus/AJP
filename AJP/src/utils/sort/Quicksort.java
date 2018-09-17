@@ -11,7 +11,7 @@ import java.util.List;
  * @version 1.3
  * @param <T> - The type specific to the this Sort Class.
  */
-public class Quicksort<T> extends Sort<T> 
+public class Quicksort<T> implements Sort<T> 
 {
 	@Override
 	public void sort(List<T> list, Comparator<T> compareStrategy) {

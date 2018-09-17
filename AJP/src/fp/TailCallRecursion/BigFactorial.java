@@ -15,7 +15,6 @@ public class BigFactorial {
 			return TailCalls.done(factorial);
 		}else {
 			return TailCalls.call(() ->	{
-				System.out.println(factorial);
 				return factorialTailRec(multiply(factorial, number), decrement(number));
 			});
 		}

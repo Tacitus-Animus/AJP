@@ -3,12 +3,13 @@
  */
 package utils.Collections;
 
+
 /**
  * @author Alex Paul
  *
  */
 public class LinkedList<T> 
-{
+{		
 		private LinkedList<T> prev, next;
 		
 		private T element;
