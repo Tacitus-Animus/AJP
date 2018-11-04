@@ -15,6 +15,7 @@ public class TestRodCutter {
 		final RodCutterMemo memoized = new RodCutterMemo(priceValues);
 		
 //		System.out.println("Basic:");
+		 
 //		Output.testSpeed("Max for 5", () -> System.out.println(basicOverlappingRec.maxProfit(5)));
 //		Output.testSpeed("Max for 10", () -> System.out.println(basicOverlappingRec.maxProfit(10)));
 //		Output.testSpeed("Max for 16", () -> System.out.println(basicOverlappingRec.maxProfit(17)));

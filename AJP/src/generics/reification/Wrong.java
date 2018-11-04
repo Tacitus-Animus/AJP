@@ -50,7 +50,6 @@ public class Wrong {
 		//String[] is sub-type Object!
 		TestHelper.assertThrows(ClassCastException.class, () -> {
 			Object[] o = new Object[] {"one"};
-			@SuppressWarnings("unused")
 			String[] s = (String[]) o;
 		});
 		

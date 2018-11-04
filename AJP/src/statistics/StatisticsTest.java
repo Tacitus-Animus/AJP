@@ -8,15 +8,12 @@ public class StatisticsTest {
 		 * Might use loaner or EAM pattern... need to reassess patterns' pro/con/use cases.
 		 */
 		BayesRule test = BayesRule.Builder()
-									.setPrior(0.1f)
-									.setSensitivity(0.9f)
+									.setPrior(0.01f)
+									.setSensitivity(0.8f)
 									.setSpecificity(0.5f)
-									.nameEvents("At Red", "At Green")
+									.nameEvents("Have Heart Disease", "Don't have Heart Disease")
 									.nameTests("Pos", "Neg")
 									.create();
-		
 		test.printPosterior();
-		
 		}
-
 }

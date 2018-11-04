@@ -8,7 +8,7 @@ public class TestPair {
 		var pair = new Pair<>("one", 2);
 		
 		//throws a warning for raw type Pair without Diamond syntax <>
-		@SuppressWarnings("rawtypes")
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		var other = new Pair("one", 2);
 
 	}

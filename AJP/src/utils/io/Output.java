@@ -60,6 +60,5 @@ public class Output
 		System.out.printf("End %s\n"
 						+ "Time: %d.%d seconds\n", taskName,TimeUnit.MILLISECONDS.toSeconds(duration), 
 															  TimeUnit.MILLISECONDS.toMillis(duration));
-		
 	}
 }

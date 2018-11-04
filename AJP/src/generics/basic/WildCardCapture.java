@@ -11,7 +11,7 @@ public class WildCardCapture {
 
 	public static void main(String[] args) {
 
-		//inferred.
+		//inferred object
 		var implicit = Lists.factory();
 		
 		//explicit can't be a wild-card.
@@ -27,11 +27,11 @@ public class WildCardCapture {
 		
 		List<? extends Number> source = nums;
 		
-		//adding
-		IntStream.rangeClosed(0, 10).forEach(i -> sink.add(i));
+		//adding with super
+		IntStream.rangeClosed(0, 10).forEach(sink::add);
 		
 		var sum = 0.0;
-		//putting
+		//getting with extends
 		for(Number num : source) {
 			sum += num.doubleValue();
 		}

@@ -6,6 +6,7 @@ import java.util.TreeSet;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
+import utils.Counter;
 import utils.Collections.Tree;
 
 public class TestingField {
@@ -18,6 +19,10 @@ public class TestingField {
 		var t = new TreeSet<Integer>();
 		
 		test("world");
+		
+		for(int a : new Counter(3)) {
+			 System.out.println(a);
+		}
 		
 		System.out.println(months.andThen(toDays).andThen(toHours).andThen(onlyOffTime).apply(8));
 		

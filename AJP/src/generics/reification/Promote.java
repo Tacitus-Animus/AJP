@@ -33,7 +33,7 @@ public class Promote {
 	@Test
 	public void test() {
 		
-		var objects = Arrays.<Object>asList("one", "two");
+		var objects = Arrays.<Object>asList("one", "two", 3);
 		
 		//will throw error since, objects has an integer.
 		TestHelper.assertThrows(ClassCastException.class, () -> promote(objects));

@@ -30,7 +30,6 @@ public class DeceptiveLibrary {
 			Integer[] ints = new Integer[] {1};
 			Number[] nums = ints;
 			nums[0] = 1.01; //can't store a double into an ints array.
-			@SuppressWarnings("unused")
 			int n = ints[0];
 		});
 	}

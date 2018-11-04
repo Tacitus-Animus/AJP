@@ -28,7 +28,6 @@ public class InnocentClient {
 		numLists[0] = Arrays.asList(1.01);
 		
 		TestHelper.assertThrows(ClassCastException.class, () -> {
-		@SuppressWarnings("unused")
 		int i = intLists[0].get(0); //tries to cast Double to Integer
 		})/*.printStackTrace()*/;
 		

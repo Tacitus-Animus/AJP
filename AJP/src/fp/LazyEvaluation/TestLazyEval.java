@@ -8,7 +8,7 @@ public class TestLazyEval {
 
 	public static void main(String[] args) {
 
-		System.out.println(test(()->evaluate(10), ()-> evaluate(1)));
+		System.out.println(test(()-> evaluate(10), ()-> evaluate(1)));
 		
 	}
 
