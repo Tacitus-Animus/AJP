@@ -1,7 +1,9 @@
 package utils.io;
 
-import java.time.LocalTime;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 
 /**
 * @author  Alexander J Paul
@@ -43,7 +45,7 @@ public class Output
 	 * 
 	 * @param milliSeconds - The delay between printing out Strings when type() method is invoked.
 	 */
-	public static void setDelay(@SuppressWarnings("hiding") int milliSeconds)
+	public static void setDelay(int milliSeconds)
 	{
 		if(milliSeconds < 0) Output.milliSeconds = 0;
 		else if(milliSeconds > 1000) Output.milliSeconds = 1000;
@@ -61,4 +63,25 @@ public class Output
 						+ "Time: %d.%d seconds\n", taskName,TimeUnit.MILLISECONDS.toSeconds(duration), 
 															  TimeUnit.MILLISECONDS.toMillis(duration));
 	}
+	
+	/**
+	 * Create a consumer of a {@code ThreadLocalRandom}. Randomly choose variables to change. Able to change variables randomly within specified bounds. 
+	 * @param iterations - number of times to randomly choose a variable to change.
+	 * @param timeDelay - the delay between iterations.
+	 * @param randomOptions - 
+	 */
+	public static void simulateChange(int iterations, long timeDelay, List<Consumer<ThreadLocalRandom>> randomOptions) {
+		
+		final ThreadLocalRandom random = ThreadLocalRandom.current();
+				
+		for(;iterations > 0; iterations--) {
+			randomOptions.get(random.nextInt(randomOptions.size())).accept(random);
+			try {
+				Thread.sleep(timeDelay);
+			} catch (InterruptedException e) {
+				//Do nothing...
+			}
+		}
+	}
+	
 }

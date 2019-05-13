@@ -24,8 +24,8 @@ public interface TailCall<T> {
 		return Stream.iterate(this, TailCall::apply)
 				.filter(TailCall::isComplete)
 				.findFirst()
-				.get().
-				result();
+				.get()
+				.result();
 	}
 	
 }
