@@ -3,9 +3,6 @@ package generics.basic;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-import javafx.util.Builder;
 
 public class WildCardCapture {
 
